@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --sky-indigo: #1a0b3d; --sky-purple: #3f1e6b; --sunset-pink: #b83488; --sunset-orange: #f97c4f;
-            --neon-pink: #ff00c1; --neon-cyan: #00f8f8; --accent-gold: #FFD700; --text-light: #fde2f9;
+            --sky-indigo: #1a0b3d; --sky-purple: #3f1e6b; --sunset-pink: #b83488;
+            --neon-pink: #ff00c1; --neon-cyan: #00f8f8; --text-light: #fde2f9;
             --font-neon-script: 'Kaushan Script', cursive; --font-body: 'Poppins', sans-serif;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,10 +19,10 @@
         body { background-color: var(--sky-indigo); font-family: var(--font-body); color: var(--text-light); overflow-x: hidden; }
 
         .background-scene { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: linear-gradient(180deg, var(--sky-indigo) 0%, var(--sky-purple) 70%, var(--sunset-pink) 100%); }
-        .stars { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(1px 1px at 25px 5px, white, transparent), radial-gradient(0.5px 0.5px at 100px 10px, white, transparent), radial-gradient(1.5px 1.5px at 150px 80px, white, transparent); background-repeat: repeat; background-size: 200px 200px; animation: twinkle 8s infinite linear alternate; }
+        .stars { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(1px 1px at 25px 5px, white, transparent), radial-gradient(0.5px 0.5px at 100px 10px, white, transparent); background-repeat: repeat; background-size: 200px 200px; animation: twinkle 8s infinite linear alternate; }
         @keyframes twinkle { from { opacity: 0.1; } to { opacity: 0.7; } }
-        
-        /* --- SHOOTING STARS ARE BACK --- */
+
+        /* --- SHOOTING STARS RESTORED --- */
         .shooting-stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
         .shooting-star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; box-shadow: 0 0 6px 1px #fff; animation: shoot linear infinite; }
         .shooting-star::after { content: ''; position: absolute; top: 50%; right: 1px; height: 1px; width: 100px; background: linear-gradient(to right, #fff, transparent); transform: translateY(-50%); }
@@ -31,7 +31,8 @@
         .shooting-star:nth-child(3) { top: 60%; left: -100px; animation-duration: 6s; animation-delay: 5s; }
         @keyframes shoot { 0% { transform: translate(0, 0); opacity: 1; } 50% { opacity: 1; } 100% { transform: translate(150vw, 60vh); opacity: 0; } }
 
-        .tree-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 90vh; z-index: 0; pointer-events: none; }
+
+        .tree-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 90vh; z-index: -1; pointer-events: none; }
         .tree { position: absolute; bottom: 0; width: 50%; height: 100%; background-image: url(trees-png.webp); background-size: contain; background-repeat: no-repeat; opacity: 0.5; }
         .tree.left { left: 0; background-position: bottom left; transform: scaleX(-1); }
         .tree.right { right: 0; background-position: bottom right; }
@@ -39,7 +40,7 @@
         .main-content { position: relative; z-index: 1; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         section { padding: 120px 0; }
-        h1, h2 { font-family: var(--font-neon-script); font-size: 4rem; color: #fff; text-align: center; margin-bottom: 20px; text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-pink), 0 0 35px var(--neon-pink), 0 0 40px var(--neon-pink); }
+        h1, h2 { font-family: var(--font-neon-script); font-size: 4rem; color: #fff; text-align: center; margin-bottom: 20px; text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-pink), 0 0 35px var(--neon-pink); }
         h2 { font-size: 3rem; margin-bottom: 50px; }
         p { text-align: center; max-width: 700px; margin: 0 auto; line-height: 1.8; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
@@ -48,7 +49,7 @@
         header { position: sticky; top: 0; z-index: 100; background: rgba(26, 11, 61, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 0, 193, 0.3); padding: 15px 0; }
         nav { display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; font-family: var(--font-neon-script); font-size: 2rem; color: var(--text-light); text-decoration: none; text-shadow: 0 0 8px var(--neon-pink);}
-        .logo-img { height: 40px; width: 40px; margin-right: 15px; border-radius: 50%; border: 2px solid var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+        .logo-img { height: 40px; width: 40px; margin-right: 15px; border-radius: 50%; border: 2px solid #FFD700; box-shadow: 0 0 10px #FFD700; }
         .nav-links a { font-family: var(--font-neon-script); font-size: 1.8rem; color: var(--text-light); text-decoration: none; margin: 0 15px; transition: all 0.3s; }
         .nav-links a:hover { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
         
@@ -65,6 +66,13 @@
         .content-wrapper { background-color: rgba(26, 11, 61, 0.7); backdrop-filter: blur(8px); }
         .card { background-color: rgba(40, 19, 90, 0.75); padding: 40px; text-align: center; border: 2px solid var(--neon-cyan); border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(12px); }
         .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 10px 25px rgba(0, 248, 248, 0.3); }
+        
+        .incident-showcase { display: flex; align-items: center; gap: 40px; }
+        .video-container { flex: 2; min-width: 0; border: 4px solid var(--neon-pink); border-radius: 15px; box-shadow: 0 0 25px var(--neon-pink); overflow: hidden; }
+        .video-container video { width: 100%; display: block; }
+        .incident-gallery { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+        .incident-image { width: 100%; border-radius: 15px; border: 4px solid var(--neon-pink); box-shadow: 0 0 25px var(--neon-pink); }
+
         .tokenomics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px; }
         .card h3 { font-family: var(--font-body); font-size: 1.5rem; font-weight: 700; color: var(--neon-pink); margin-bottom: 15px; text-shadow: none;}
         .card p { font-size: 1.2rem; color: var(--text-light); }
@@ -80,6 +88,7 @@
             h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
             .hero-img { width: 250px; height: 250px; }
             .nav-links { display: none; } .lore-container { flex-direction: column; }
+            .incident-showcase { flex-direction: column; }
             .lore-image { margin-bottom: 30px; }
         }
     </style>
@@ -87,14 +96,18 @@
 <body>
     <div class="background-scene">
         <div class="stars"></div>
-        <div class="shooting-stars"><div class="shooting-star"></div><div class="shooting-star"></div><div class="shooting-star"></div></div>
+        <div class="shooting-stars">
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+        </div>
     </div>
     <div class="tree-container"><div class="tree left"></div><div class="tree right"></div></div>
 
     <div class="main-content">
         <header><div class="container"><nav>
             <a href="#hero" class="logo"><img src="new-logo.webp" alt="Florida Coin Logo" class="logo-img">Florida</a>
-            <div class="nav-links"><a href="#lore">Lore</a><a href="#tokenomics">Tokenomics</a></div>
+            <div class="nav-links"><a href="#video-feature">The Onion</a><a href="#lore">Lore</a><a href="#tokenomics">Tokenomics</a></div>
         </nav></div></header>
 
         <main>
@@ -108,8 +121,24 @@
             </div></section>
 
             <div class="content-wrapper">
+                <section id="video-feature"><div class="container fade-in">
+                    <h2 class="fade-in">The Onion Incident</h2>
+                    <div class="incident-showcase">
+                        <div class="video-container">
+                            <video autoplay loop muted playsinline controls>
+                                <source src="KB_Onion.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="incident-gallery">
+                            <img src="onion-eat.jpg" alt="KB eats an onion" class="incident-image">
+                            <img src="onion-onion.webp" alt="KB eats an onion progression" class="incident-image">
+                        </div>
+                    </div>
+                </div></section>
+
                 <section id="lore"><div class="container fade-in">
-                    <h2 class="fade-in">Little Lore</h2>
+                    <h2 class="fade-in">The Wanderer</h2>
                     <div class="card lore-container">
                         <img src="KB-FLORIDA.webp" alt="The Wanderer Character" class="lore-image">
                         <p>Legend says $FLORIDA was born when KB accidentally spilled energy drink on her laptop while watching Florida Man headlines. The coin gained sentience and now it randomly pumps during hurricane season and dumps every time someone mentions "reasonable weather.”</p>
