@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Coin - Neon Paradise</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-indigo: #1a0b3d; --sky-purple: #3f1e6b; --sunset-pink: #b83488; --sunset-orange: #f97c4f;
+            --neon-pink: #ff00c1; --neon-cyan: #00f8f8; --accent-gold: #FFD700; --text-light: #fde2f9;
+            --font-neon-script: 'Kaushan Script', cursive; --font-body: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--sky-indigo); font-family: var(--font-body); color: var(--text-light); overflow-x: hidden; }
+
+        .background-scene { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: linear-gradient(180deg, var(--sky-indigo) 0%, var(--sky-purple) 70%, var(--sunset-pink) 100%); }
+        .stars { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(1px 1px at 25px 5px, white, transparent), radial-gradient(0.5px 0.5px at 100px 10px, white, transparent), radial-gradient(1.5px 1.5px at 150px 80px, white, transparent); background-repeat: repeat; background-size: 200px 200px; animation: twinkle 8s infinite linear alternate; }
+        @keyframes twinkle { from { opacity: 0.1; } to { opacity: 0.7; } }
+        
+        /* --- SHOOTING STARS ARE BACK --- */
+        .shooting-stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+        .shooting-star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; box-shadow: 0 0 6px 1px #fff; animation: shoot linear infinite; }
+        .shooting-star::after { content: ''; position: absolute; top: 50%; right: 1px; height: 1px; width: 100px; background: linear-gradient(to right, #fff, transparent); transform: translateY(-50%); }
+        .shooting-star:nth-child(1) { top: 10%; left: -100px; animation-duration: 7s; animation-delay: 1s; }
+        .shooting-star:nth-child(2) { top: 30%; left: -100px; animation-duration: 9s; animation-delay: 3s; }
+        .shooting-star:nth-child(3) { top: 60%; left: -100px; animation-duration: 6s; animation-delay: 5s; }
+        @keyframes shoot { 0% { transform: translate(0, 0); opacity: 1; } 50% { opacity: 1; } 100% { transform: translate(150vw, 60vh); opacity: 0; } }
+
+        .tree-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 90vh; z-index: 0; pointer-events: none; }
+        .tree { position: absolute; bottom: 0; width: 50%; height: 100%; background-image: url(trees-png.webp); background-size: contain; background-repeat: no-repeat; opacity: 0.5; }
+        .tree.left { left: 0; background-position: bottom left; transform: scaleX(-1); }
+        .tree.right { right: 0; background-position: bottom right; }
+        
+        .main-content { position: relative; z-index: 1; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 120px 0; }
+        h1, h2 { font-family: var(--font-neon-script); font-size: 4rem; color: #fff; text-align: center; margin-bottom: 20px; text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-pink), 0 0 35px var(--neon-pink), 0 0 40px var(--neon-pink); }
+        h2 { font-size: 3rem; margin-bottom: 50px; }
+        p { text-align: center; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        header { position: sticky; top: 0; z-index: 100; background: rgba(26, 11, 61, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 0, 193, 0.3); padding: 15px 0; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; font-family: var(--font-neon-script); font-size: 2rem; color: var(--text-light); text-decoration: none; text-shadow: 0 0 8px var(--neon-pink);}
+        .logo-img { height: 40px; width: 40px; margin-right: 15px; border-radius: 50%; border: 2px solid var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+        .nav-links a { font-family: var(--font-neon-script); font-size: 1.8rem; color: var(--text-light); text-decoration: none; margin: 0 15px; transition: all 0.3s; }
+        .nav-links a:hover { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+        
+        #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero-content { display: flex; flex-direction: column; align-items: center; }
+        .hero-img { width: 350px; height: 350px; border-radius: 50%; object-fit: cover; filter: drop-shadow(0 0 25px var(--neon-pink)); animation: float 8s ease-in-out infinite alternate; }
+        #hero h1 { font-size: 3.5rem; }
+        .sub-tagline { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); margin-top: -10px; margin-bottom: 40px;}
+        .hero-button { font-family: var(--font-body); font-size: 1.2rem; background: transparent; color: var(--text-light); border: 3px solid var(--neon-pink); padding: 15px 40px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; animation: pulse-glow 3s infinite; }
+        .hero-button:hover { background: rgba(255, 0, 193, 0.2); transform: scale(1.05); }
+        @keyframes float { from { transform: translateY(-15px); } to { transform: translateY(15px); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px var(--neon-pink); } 50% { box-shadow: 0 0 30px var(--neon-pink), 0 0 10px #fff; } }
+
+        .content-wrapper { background-color: rgba(26, 11, 61, 0.7); backdrop-filter: blur(8px); }
+        .card { background-color: rgba(40, 19, 90, 0.75); padding: 40px; text-align: center; border: 2px solid var(--neon-cyan); border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(12px); }
+        .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 10px 25px rgba(0, 248, 248, 0.3); }
+        .tokenomics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px; }
+        .card h3 { font-family: var(--font-body); font-size: 1.5rem; font-weight: 700; color: var(--neon-pink); margin-bottom: 15px; text-shadow: none;}
+        .card p { font-size: 1.2rem; color: var(--text-light); }
+        .content-box { text-align: left; }
+        .lore-container { display: flex; align-items: center; gap: 50px; }
+        .lore-image { width: 250px; height: 250px; border-radius: 50%; border: 4px solid var(--neon-pink); box-shadow: 0 0 20px var(--neon-pink); object-fit: cover; flex-shrink: 0; }
+        
+        footer { text-align: center; padding: 60px 20px; background-color: #10052b; }
+        footer .button-container { margin-top: 20px; }
+
+        @media (max-width: 900px) { .tree-container { display: none; } }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
+            .hero-img { width: 250px; height: 250px; }
+            .nav-links { display: none; } .lore-container { flex-direction: column; }
+            .lore-image { margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-scene">
+        <div class="stars"></div>
+        <div class="shooting-stars"><div class="shooting-star"></div><div class="shooting-star"></div><div class="shooting-star"></div></div>
+    </div>
+    <div class="tree-container"><div class="tree left"></div><div class="tree right"></div></div>
+
+    <div class="main-content">
+        <header><div class="container"><nav>
+            <a href="#hero" class="logo"><img src="new-logo.webp" alt="Florida Coin Logo" class="logo-img">Florida</a>
+            <div class="nav-links"><a href="#lore">Lore</a><a href="#tokenomics">Tokenomics</a></div>
+        </nav></div></header>
+
+        <main>
+            <section id="hero"><div class="container fade-in">
+                <div class="hero-content">
+                    <img src="new-logo.webp" alt="Florida Coin" class="hero-img">
+                    <h1 class="fade-in">KB's Florida</h1>
+                    <p class="sub-tagline fade-in">Making kuru wild again</p>
+                    <a href="https://www.kuru.io/trade/0x9410062a705d0367c2c39e87e5c14d8d22dcf8a7" target="_blank" class="hero-button">Buy Now</a>
+                </div>
+            </div></section>
+
+            <div class="content-wrapper">
+                <section id="lore"><div class="container fade-in">
+                    <h2 class="fade-in">Little Lore</h2>
+                    <div class="card lore-container">
+                        <img src="KB-FLORIDA.webp" alt="The Wanderer Character" class="lore-image">
+                        <p>Legend says $FLORIDA was born when KB accidentally spilled energy drink on her laptop while watching Florida Man headlines. The coin gained sentience and now it randomly pumps during hurricane season and dumps every time someone mentions "reasonable weather.”</p>
+                    </div>
+                </div></section>
+
+                <section id="tokenomics"><div class="container fade-in">
+                    <h2 class="fade-in">Tokenomics</h2>
+                    <div class="tokenomics-grid">
+                        <div class="card"><h3>Total Supply</h3><p>1,000,000,000</p></div>
+                        <div class="card"><h3>Ticker</h3><p>$FLORIDA</p></div>
+                        <div class="card"><h3>Tax</h3><p>0% Buy / 0% Sell</p></div>
+                    </div>
+                </div></section>
+            </div>
+        </main>
+        
+        <footer><div class="container">
+            <h2>Join the Movement</h2>
+            <div class="button-container"><a href="https://x.com/FloridaCoinKB" target="_blank" class="hero-button">Follow on X</a></div>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 40px;">&copy; 2025 Florida Coin. For entertainment purposes only.</p>
+        </div></footer>
+    </div>
+    
+    <script>
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        fadeInElements.forEach(el => { observer.observe(el); });
+    </script>
+</body>
+</html>
