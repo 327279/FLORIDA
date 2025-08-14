@@ -1,34 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Florida Coin</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐊</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="custom-cursor"></div>
-    <audio id="ambient-music" loop>
-        <source src="https://www.chosic.com/wp-content/uploads/2022/03/The-Road-Home.mp3" type="audio/mpeg">
-    </audio>
-    <button id="music-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM8.707 11.182l.707-.707A4.486 4.486 0 0 0 8 5.525V4.717a5.5 5.5 0 0 1 2.93 4.975l.83 1.66a.5.5 0 0 1-.745.556L8 8.983v2.2zM12 8a6.5 6.5 0 0 1-1.341 3.993l.708.707A7.5 7.5 0 0 0 13 8c0-1.8-.6-3.4-1.6-4.697l-.734.652A6.5 6.5 0 0 1 12 8z"/><path d="M10 8c0-.464-.06-.91-.17-1.332l-.708.708A3.486 3.486 0 0 1 9.025 8a3.486 3.486 0 0 1-.137.954l.708.708c.11-.422.17-.868.17-1.332zM1.5 5.5a.5.5 0 0 0 0 5h2.325l2.363 1.89a.5.5 0 0 0 .812-.39V4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5z"/></svg>
-    </button>
     <div class="background-scene">
         <div class="stars"></div>
-        <div class="shooting-stars"><div class="shooting-star"></div><div class="shooting-star"></div><div class="shooting-star"></div></div>
+        <div class="shooting-stars"><div class="shooting-star"></div><div class="shooting-star"></div></div>
+        <img src="alligator.webp" alt="Gator Background" class="hero-background-gator">
     </div>
-    <div class="tree-container"><div class="tree left"></div><div class="tree right"></div></div>
 
     <div class="main-content">
         <header><div class="container"><nav>
             <a href="#hero" class="logo"><img src="new-logo.webp" alt="Florida Coin Logo" class="logo-img">Florida</a>
-            <div class="nav-links"><a href="#video-feature">The Onion</a><a href="#lore">Lore</a><a href="#tokenomics">Tokenomics</a></div>
+            <div class="nav-links">
+                <a href="#about-grid">Lore</a>
+                <a href="#tokenomics-section">Tokenomics</a>
+                <a href="#video-feature">The Onion</a>
+            </div>
         </nav></div></header>
 
         <main>
@@ -42,6 +38,24 @@
             </div></section>
 
             <div class="content-wrapper">
+                <section id="about-grid" class="container">
+                    <div class="fade-in">
+                        <h2>Little Lore</h2>
+                        <div class="card">
+                            <img src="KB-FLORIDA.webp" alt="The Wanderer Character" class="lore-image">
+                            <p>Legend says $FLORIDA was born when KB accidentally spilled energy drink on her laptop while watching Florida Man headlines. The coin gained sentience and now it randomly pumps during hurricane season and dumps every time someone mentions "reasonable weather.”</p>
+                        </div>
+                    </div>
+                    <div id="tokenomics-section" class="fade-in">
+                        <h2>Tokenomics</h2>
+                        <div class="tokenomics-grid">
+                            <div class="card"><h3>Total Supply</h3><p>1,000,000,000</p></div>
+                            <div class="card"><h3>Ticker</h3><p>$FLORIDA</p></div>
+                            <div class="card"><h3>Tax</h3><p>0% Buy / 0% Sell</p></div>
+                        </div>
+                    </div>
+                </section>
+
                 <section id="video-feature"><div class="container fade-in">
                     <h2>The Onion Incident</h2>
                     <div class="incident-showcase">
@@ -52,35 +66,16 @@
                         </div>
                     </div>
                 </div></section>
-                <section id="about-grid" class="container">
-                    <div class="fade-in">
-                        <h2 class="fade-in">Little Lore</h2>
-                        <div class="card">
-                            <img src="KB-FLORIDA.webp" alt="The Wanderer Character" class="lore-image">
-                            <p>Legend says $FLORIDA was born when KB accidentally spilled energy drink on her laptop while watching Florida Man headlines. The coin gained sentience and now it randomly pumps during hurricane season and dumps every time someone mentions "reasonable weather.”</p>
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <h2 class="fade-in">Tokenomics</h2>
-                        <div class="tokenomics-grid">
-                            <div class="card tokenomics-card"><h3>Total Supply</h3><p>1,000,000,000</p></div>
-                            <div class="card tokenomics-card"><h3>Ticker</h3><p>$FLORIDA</p></div>
-                            <div class="card tokenomics-card"><h3>Tax</h3><p>0% Buy / 0% Sell</p></div>
-                        </div>
-                    </div>
-                </section>
-               
             </div>
         </main>
         
         <footer><div class="container">
             <h2>Join the Movement</h2>
             <div class="button-container"><a href="https://x.com/FloridaCoinKB" target="_blank" class="hero-button">Follow on X</a></div>
-            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 40px;">&copy; 2025 Florida Coin. For entertainment purposes only.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 40px;">&copy; Made by ZETH ALPHA, 2025 Florida Coin. For entertainment purposes only.</p>
         </div></footer>
     </div>
     
     <script src="script.js"></script>
 </body>
 </html>
-
