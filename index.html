@@ -3,77 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florida Coin</title>
+    <title>$FLORIDA Coin</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐊</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-scene">
-        <div class="stars"></div>
-        <div class="shooting-stars"><div class="shooting-star"></div><div class="shooting-star"></div></div>
-        <img src="alligator.webp" alt="Gator Background" class="hero-background-gator">
-    </div>
+    <div class="background-grid"></div>
 
-    <div class="main-content">
-        <header><div class="container"><nav>
-            <a href="#hero" class="logo"><img src="new-logo.webp" alt="Florida Coin Logo" class="logo-img">Florida</a>
-            <div class="nav-links">
-                <a href="#about-grid">Lore</a>
-                <a href="#tokenomics-section">Tokenomics</a>
-                <a href="#video-feature">The Onion</a>
-            </div>
-        </nav></div></header>
+    <div class="main-container">
+        <header>
+            <nav class="container">
+                <a href="#hero" class="logo">
+                    <img src="new-logo.webp" alt="Florida Coin Logo" class="logo-img">
+                    <span>$FLORIDA</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#about">LORE</a>
+                    <a href="#tokenomics">TOKENOMICS</a>
+                    <a href="#incident">INCIDENT</a>
+                </div>
+            </nav>
+        </header>
 
         <main>
-            <section id="hero"><div class="container fade-in">
+            <section id="hero" class="container">
                 <div class="hero-content">
-                    <img src="new-logo.webp" alt="Florida Coin" class="hero-img">
-                    <h1>KB's Florida</h1>
-                    <p class="sub-tagline">Making kuru wild again</p>
-                    <a href="https://www.kuru.io/trade/0x9410062a705d0367c2c39e87e5c14d8d22dcf8a7" target="_blank" class="hero-button">Buy Now</a>
+                    <!-- NEW WRAPPER for the image -->
+                    <div class="hero-img-container anim-float">
+                        <img src="new-logo.webp" alt="Florida Coin" class="hero-img">
+                    </div>
+                    <h1 class="hero-title" data-text="KB's Florida">KB's Florida</h1>
+                    <p class="hero-subtitle">
+                        <span class="prompt">></span>
+                        <span id="typing-text"></span>
+                        <span class="cursor">_</span>
+                    </p>
+                    <a href="https://www.kuru.io/trade/0x9410062a705d0367c2c39e87e5c14d8d22dcf8a7" target="_blank" class="hero-button">BUY NOW</a>
                 </div>
-            </div></section>
+            </section>
 
-            <div class="content-wrapper">
-                <section id="about-grid" class="container">
-                    <div class="fade-in">
-                        <h2>Little Lore</h2>
-                        <div class="card">
-                            <img src="KB-FLORIDA.webp" alt="The Wanderer Character" class="lore-image">
-                            <p>Legend says $FLORIDA was born when KB accidentally spilled energy drink on her laptop while watching Florida Man headlines. The coin gained sentience and now it randomly pumps during hurricane season and dumps every time someone mentions "reasonable weather.”</p>
-                        </div>
-                    </div>
-                    <div id="tokenomics-section" class="fade-in">
-                        <h2>Tokenomics</h2>
-                        <div class="tokenomics-grid">
-                            <div class="card"><h3>Total Supply</h3><p>1,000,000,000</p></div>
-                            <div class="card"><h3>Ticker</h3><p>$FLORIDA</p></div>
-                            <div class="card"><h3>Tax</h3><p>0% Buy / 0% Sell</p></div>
-                        </div>
-                    </div>
-                </section>
+            <section id="about" class="container content-section anim-fade-up">
+                <h2 class="section-title">LORE</h2>
+                <div class="card lore-card">
+                    <img src="KB-FLORIDA.webp" alt="KB Character" class="lore-image">
+                    <p>Legend says $FLORIDA was born when KB accidentally spilled energy drink on her laptop while watching Florida Man headlines. The coin gained sentience and now it randomly pumps during hurricane season and dumps every time someone mentions "reasonable weather.”</p>
+                </div>
+            </section>
 
-                <section id="video-feature"><div class="container fade-in">
-                    <h2>The Onion Incident</h2>
-                    <div class="incident-showcase">
-                        <div class="video-container"><video autoplay loop muted playsinline controls><source src="KB_Onion.mp4" type="video/mp4"></video></div>
-                        <div class="incident-gallery">
-                            <img src="onion-eat.jpg" alt="KB eats an onion" class="incident-image">
-                            <img src="onion-onion.webp" alt="KB eats an onion progression" class="incident-image">
-                        </div>
+            <section id="tokenomics" class="container content-section anim-fade-up">
+                 <h2 class="section-title">TOKENOMICS</h2>
+                 <div class="tokenomics-grid">
+                    <div class="card"><h3>TOTAL SUPPLY</h3><p>1,000,000,000</p></div>
+                    <div class="card"><h3>TICKER</h3><p>$FLORIDA</p></div>
+                    <div class="card"><h3>TAX</h3><p>0% BUY / 0% SELL</p></div>
+                </div>
+            </section>
+            
+            <section id="incident" class="container content-section anim-fade-up">
+                <h2 class="section-title">THE ONION INCIDENT</h2>
+                <div class="incident-showcase">
+                    <div class="video-container card">
+                        <video autoplay loop muted playsinline controls>
+                            <source src="KB_Onion.mp4" type="video/mp4">
+                        </video>
                     </div>
-                </div></section>
-            </div>
+                    <div class="incident-gallery">
+                        <div class="card"><img src="onion-eat.jpg" alt="KB eats an onion" class="incident-image"></div>
+                        <div class="card"><img src="onion-onion.webp" alt="KB eats an onion progression" class="incident-image"></div>
+                    </div>
+                </div>
+            </section>
         </main>
         
-        <footer><div class="container">
-            <h2>Join the Movement</h2>
-            <div class="button-container"><a href="https://x.com/FloridaCoinKB" target="_blank" class="hero-button">Follow on X</a></div>
-            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 40px;">&copy; Made by ZETH ALPHA, 2025 Florida Coin. For entertainment purposes only.</p>
-        </div></footer>
+        <footer class="container anim-fade-up">
+            <h2 class="section-title">JOIN THE MOVEMENT</h2>
+            <a href="https://x.com/FloridaCoinKB" target="_blank" class="hero-button">FOLLOW ON X</a>
+            <p class="copyright">&copy; ZETH ALPHA 2025 // FOR ENTERTAINMENT PURPOSES ONLY</p>
+        </footer>
     </div>
     
     <script src="script.js"></script>
